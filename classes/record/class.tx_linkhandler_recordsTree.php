@@ -26,7 +26,7 @@ if (!defined ('TYPO3_MODE'))
 	die ('Access denied.');
 
 // Explicitly requires the right file containing "localPageTree" class, because it still exists and is still needed
-require_once(PATH_typo3 . 'class.browse_links.php');
+//require_once(PATH_typo3 . 'class.browse_links.php');
 
 /**
  * Class which generates the page tree for records, specific version for linkhandler extension
