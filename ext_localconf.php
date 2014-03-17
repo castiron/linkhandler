@@ -36,14 +36,14 @@ if ( version_compare(TYPO3_version, '4.3.1', '<=') && is_array($configurationArr
 if ( version_compare(TYPO3_version, '4.3.0', '<') && is_array($configurationArray) && array_key_exists('applyXclassHideSaveAndViewButton', $configurationArray) && ($configurationArray['applyXclassHideSaveAndViewButton']) == 1) {
 	if ( t3lib_extMgm::isLoaded('languagevisibility') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['typo3/alt_doc.php'] != '' )
 		$TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/languagevisibility/patch/class.ux_SC_alt_doc.php'] = t3lib_extMgm::extPath($_EXTKEY) . '/patch/class.ux_ux_alt_doc.php';
-	elseif ($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['typo3/alt_doc.php'] == '' ) 
+	elseif ($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['typo3/alt_doc.php'] == '' )
 		$TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['typo3/alt_doc.php'] = t3lib_extMgm::extPath($_EXTKEY) . '/patch/class.ux_alt_doc.php';
 }
  */
 
 // add linkhandler for "record"
 // require_once(t3lib_extMgm::extPath($_EXTKEY) . 'class.tx_linkhandler_handler.php');
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['typolinkLinkHandler']['record'] = 'EXT:linkhandler/class.tx_linkhandler_handler.php:&tx_linkhandler_handler';
+//$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['typolinkLinkHandler']['record'] = 'EXT:linkhandler/class.tx_linkhandler_handler.php:&tx_linkhandler_handler';
 
 // register hook
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/rtehtmlarea/mod3/class.tx_rtehtmlarea_browse_links.php']['browseLinksHook'][]='EXT:linkhandler/service/hook/class.tx_linkhandler_browselinkshooks.php:tx_linkhandler_browselinkshooks';
